@@ -1,8 +1,8 @@
-# redux-note
-
 # redux
 
 ## action
+
+actions目录下存放的是Action Creator
 
 ### 普通Action
 
@@ -83,6 +83,14 @@ reducer作用是根据旧的state将改变并入其中，然后返回一个新�
 
 ## containers
 
+containers内部主要是react-redux的container组件，用于对react组件进行业务逻辑包装，而react则保持纯组件性质，不参与业务逻辑处理
+connect方法的三个参数为：
+`mapStateToProps`
+`mapDispatchToProps`
+`mergeProps`
+mapStateToProps作用是通过state对象映射成Props属性传入React组件
+mapDispatchToProps作用是定义Props中的行为回调dispatch(action)，通过返回具备回调函数的对象，传入React组件
+
 ## store
 
 store通过redux的`createStore`方法进行生成
@@ -159,3 +167,7 @@ next => (action) => {
 
 
 
+
+## components
+
+React纯组件，如果能用纯组件写法就用纯组件写法，尽量以性能最优的形式来写，因为业务逻辑全放在Container中去了。
